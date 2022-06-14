@@ -29,7 +29,7 @@ export class NonsciComponent implements OnInit {
     this.unlightButton3();
     if (this.bool2==true && this.ops[1]==null){ //used to reset calc
       this.ops = [];
-      this.bool2=false;
+      this.bool2 = false;
     }
     else{
       this.bool2 = false;
@@ -316,12 +316,13 @@ export class NonsciComponent implements OnInit {
       if(button!=null && this.bool1==false){
      button.style.backgroundColor='blue';
      this.bool1 = true;
-    if (this.stack!=''){
-      this.ops.push(this.stack);
-      this.stack = '';
-    }
     if (this.bool2 == true){
       this.bool2=false;
+    }
+     if (this.stack!=''){
+      this.ops.push(this.stack);
+      this.stack = '';
+      this.bool2 = true;
     }
     if (this.ops.length==3){
       this.compute1();
@@ -337,12 +338,13 @@ export class NonsciComponent implements OnInit {
       if(button!=null && this.bool1==false){
      button.style.backgroundColor='blue';
      this.bool1 = true;
-    if (this.stack!=''){
-      this.ops.push(this.stack);
-      this.stack = '';
-    }
     if (this.bool2 == true){
       this.bool2=false;
+    }
+     if (this.stack!=''){
+      this.ops.push(this.stack);
+      this.stack = '';
+      this.bool2 = true;
     }
     if (this.ops.length==3){
       this.compute1();
@@ -357,12 +359,13 @@ export class NonsciComponent implements OnInit {
       if(button!=null && this.bool1==false){
      button.style.backgroundColor='blue';
      this.bool1 = true;
-    if (this.stack!=''){
-      this.ops.push(this.stack);
-      this.stack = '';
-    }
     if (this.bool2 == true){
       this.bool2=false;
+    }
+     if (this.stack!=''){
+      this.ops.push(this.stack);
+      this.stack = '';
+      this.bool2 = true;
     }
     if (this.ops.length==3){
       this.compute1();
@@ -377,12 +380,13 @@ export class NonsciComponent implements OnInit {
     if(button!=null && this.bool1==false){
      button.style.backgroundColor='blue';
      this.bool1 = true;
-    if (this.stack!=''){
+   if (this.bool2 == true){
+      this.bool2=false;
+    }
+     if (this.stack!=''){
       this.ops.push(this.stack);
       this.stack = '';
-    }
-    if (this.bool2 == true){
-      this.bool2=false;
+      this.bool2 = true;
     }
     if (this.ops.length==3){
       this.compute1();
@@ -399,6 +403,7 @@ export class NonsciComponent implements OnInit {
     this.bool = false;
     this.bool1 = false;
     this.bool2 = true;
+    if (this.ops.length==3){
       if (this.ops[1]=='+'){
         this.holder = +this.ops[0] + +this.ops[2];
       }
@@ -414,6 +419,17 @@ export class NonsciComponent implements OnInit {
       this.ops = [];
       this.ops.push(this.holder as unknown as string);
       this.holder = 0;
+    }
+    else if (this.ops.length==2){
+      this.holder = +this.ops[1];
+      this.unlightButton();
+      this.unlightButton1();
+      this.unlightButton2();
+      this.unlightButton3();
+      this.ops = [];
+      this.ops.push(this.holder as unknown as string);
+      this.holder = 0;
+    }
   }
 
     //function that the operators, such as +, use to perform computations in a consecutive manner
