@@ -17,16 +17,13 @@ export class NonsciComponent implements OnInit {
   ops: string[] = []; //used to sotre numbers and operations for calcs
   stack: string = ''; //where user input for numbers is placed and eventually popped off into an array
   bool = true; //used to determine whether to show the user input (the stack) or not
-  bool1 = false; //used to determine whether to hgihglight an operation button or not
+  bool1 = false; //used to determine whether to highlight an operation button or not
   bool2 = false; //used to determien whether to show the answer to a calculation or not
   holder=0; //used for intermediate calculations
 
   //adds 1 to the user input string
   public add1(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ //used to reset calc
       this.ops = [];
       this.bool2 = false;
@@ -42,10 +39,7 @@ export class NonsciComponent implements OnInit {
 
   //adds 2 to the user input string
   public add2(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -61,10 +55,7 @@ export class NonsciComponent implements OnInit {
 
   //adds 3 to the user input string
   public add3(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -80,10 +71,7 @@ export class NonsciComponent implements OnInit {
 
   //adds 4 to the user input string
   public add4(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
    if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -99,10 +87,7 @@ export class NonsciComponent implements OnInit {
 
   //adds 5 to the user input string
   public add5(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -118,10 +103,7 @@ export class NonsciComponent implements OnInit {
 
   //adds 6 to the user input string
   public add6(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -137,10 +119,7 @@ export class NonsciComponent implements OnInit {
 
   //adds 7 to the user input string
   public add7(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -156,10 +135,7 @@ export class NonsciComponent implements OnInit {
 
   //adds 8 to the user input string
   public add8(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -175,10 +151,7 @@ export class NonsciComponent implements OnInit {
 
   //adds 9 to the user input string
   public add9(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -194,10 +167,7 @@ export class NonsciComponent implements OnInit {
 
   //adds 0 to the user input string
   public add0(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -213,10 +183,7 @@ export class NonsciComponent implements OnInit {
 
   //adds a decimal to the user input string
   public addDec(){
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
     if (this.bool2==true && this.ops[1]==null){ 
       this.ops = [];
       this.bool2=false;
@@ -228,6 +195,14 @@ export class NonsciComponent implements OnInit {
     if (this.bool==false){
     this.bool=true;
     }
+  }
+
+  //unlights all operator buttons
+  public unlightAll(){
+    this.unlightButton();
+    this.unlightButton1();
+    this.unlightButton2();
+    this.unlightButton3();
   }
 
   //unhighlights the add button
@@ -277,10 +252,7 @@ export class NonsciComponent implements OnInit {
     this.bool1 = false;
     this.bool2 = false;
     this.holder = 0;
-    this.unlightButton();
-    this.unlightButton1();
-    this.unlightButton2();
-    this.unlightButton3();
+    this.unlightAll();
   }
 
   //changes a number's sign
@@ -329,6 +301,15 @@ export class NonsciComponent implements OnInit {
     }
     this.ops.push('+');
     }
+    else{
+      this.ops.pop();
+      this.unlightAll();
+      if(button != null){
+      button.style.backgroundColor='blue';
+      }
+      this.bool1 = true;
+      this.ops.push('+');
+    }
 }
 
 
@@ -351,6 +332,15 @@ export class NonsciComponent implements OnInit {
     }
     this.ops.push('-');
   }
+  else{
+      this.ops.pop();
+      this.unlightAll();
+      if(button != null){
+      button.style.backgroundColor='blue';
+      }
+      this.bool1 = true;
+      this.ops.push('-');
+    }
 }
 
   //multiplication operator
@@ -372,6 +362,15 @@ export class NonsciComponent implements OnInit {
     }
     this.ops.push('x');
   }
+  else{
+      this.ops.pop();
+      this.unlightAll();
+      if(button != null){
+      button.style.backgroundColor='blue';
+      }
+      this.bool1 = true;
+      this.ops.push('x');
+    }
 }
 
   //division operator
@@ -393,6 +392,15 @@ export class NonsciComponent implements OnInit {
     }
     this.ops.push('/');
   }
+  else{
+      this.ops.pop();
+      this.unlightAll();
+      if(button != null){
+      button.style.backgroundColor='blue';
+      }
+      this.bool1 = true;
+      this.ops.push('/');
+    }
 }
 
 
