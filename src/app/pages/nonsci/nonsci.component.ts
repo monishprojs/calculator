@@ -40,6 +40,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds 2 to the user input string
   public add2(){
     this.unlightButton();
     this.unlightButton1();
@@ -58,6 +59,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds 3 to the user input string
   public add3(){
     this.unlightButton();
     this.unlightButton1();
@@ -76,6 +78,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds 4 to the user input string
   public add4(){
     this.unlightButton();
     this.unlightButton1();
@@ -94,6 +97,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds 5 to the user input string
   public add5(){
     this.unlightButton();
     this.unlightButton1();
@@ -112,6 +116,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds 6 to the user input string
   public add6(){
     this.unlightButton();
     this.unlightButton1();
@@ -130,6 +135,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds 7 to the user input string
   public add7(){
     this.unlightButton();
     this.unlightButton1();
@@ -148,6 +154,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds 8 to the user input string
   public add8(){
     this.unlightButton();
     this.unlightButton1();
@@ -166,6 +173,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds 9 to the user input string
   public add9(){
     this.unlightButton();
     this.unlightButton1();
@@ -184,6 +192,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds 0 to the user input string
   public add0(){
     this.unlightButton();
     this.unlightButton1();
@@ -202,6 +211,7 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //adds a decimal to the user input string
   public addDec(){
     this.unlightButton();
     this.unlightButton1();
@@ -259,6 +269,7 @@ export class NonsciComponent implements OnInit {
       }
   }
 
+  //clears everything, effectiveloy resets the calculator
   public clear(){
     this.stack = '';
     this.ops = [];
@@ -272,6 +283,7 @@ export class NonsciComponent implements OnInit {
     this.unlightButton3();
   }
 
+  //changes a number's sign
   public invert(){
     if (this.stack ==''){
       this.stack = '-';
@@ -286,17 +298,19 @@ export class NonsciComponent implements OnInit {
     }
   }
 
+  //turns a number into a percent
   public percent(){
     this.stack = (+this.stack/100) as unknown as string;
   }
 
+  //deletes the last digit added to userinput
   public del(){
     if (this.stack!=''){
       this.stack = this.stack.slice(0,-1);
     }
   }
 
- 
+ //plus operator
   public addList(){
     const button = document.getElementById('+');
       if(button!=null && this.bool1==false){
@@ -317,7 +331,7 @@ export class NonsciComponent implements OnInit {
 }
 
 
-
+  //minus operator
   public subList(){
      const button = document.getElementById('-');
       if(button!=null && this.bool1==false){
@@ -337,6 +351,7 @@ export class NonsciComponent implements OnInit {
   }
 }
 
+  //multiplication operator
   public multList(){
      const button = document.getElementById('x');
       if(button!=null && this.bool1==false){
@@ -356,6 +371,7 @@ export class NonsciComponent implements OnInit {
   }
 }
 
+  //division operator
   public divList(){
     const button = document.getElementById('/');
     if(button!=null && this.bool1==false){
@@ -376,7 +392,7 @@ export class NonsciComponent implements OnInit {
 }
 
 
-
+  //computes the answer to a basic equation
   public compute(){
     this.ops.push(this.stack);
     this.stack='';
@@ -400,6 +416,7 @@ export class NonsciComponent implements OnInit {
       this.holder = 0;
   }
 
+    //function that the operators, such as +, use to perform computations in a consecutive manner
     public compute1(){
     this.bool = false;
     this.bool1 = false;
