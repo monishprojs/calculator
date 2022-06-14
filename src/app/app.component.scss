@@ -1,0 +1,28 @@
+.site-heading {
+    background-color: rgb(0, 191, 255);
+    font-size: 250%;
+    border-color: white;
+    color: white;
+    padding-left: 5%;
+    border-radius: 8px;
+    margin: 0;
+}
+
+
+.links {
+    padding-left: 5%;
+}
+
+.nav-link {
+    font-size: 150%;
+    font: Helvetica;
+    border-radius: 8px;
+    border-color: white;
+    color: rgb(0, 191, 255);
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 191, 255);
+}

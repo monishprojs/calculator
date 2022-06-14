@@ -1,0 +1,71 @@
+.calculator {
+    margin-top: 5%;
+    background-color: lightblue;
+    border-style: solid;
+    border-color: black;
+    float: center;
+    width: 40vw;
+    height: 75vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.results {
+    color: red;
+    font-size: 150%;
+    padding-top: 5%;
+    padding-left: 30%;
+}
+
+.box {
+    background-color: white;
+    color: red;
+    border-style: solid;
+    border-color: black;
+    width: 21vw;
+    height: 10vh;
+    margin-left: -5%;
+}
+
+.button {
+    width: 5vw;
+    height: 5vh;
+    margin-left: 5px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    border-radius: 0px;
+    margin-left: 25%;
+    width: 80%;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 100%;
+    margin: 5px;
+}
+
+.column img {
+    margin-top: 0px;
+}
+
+.button {
+    background-color: white;
+}
+
+.button:hover {
+    opacity: 0.5;
+}
+
+.button1 {
+    background-color: white;
+}
+
+.button1:hover {
+    opacity: 0.5;
+}

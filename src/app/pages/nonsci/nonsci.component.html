@@ -1,1 +1,47 @@
-<p>nonsci works!</p>
+<div class="calculator">
+    <div class="results">
+        Non-Scientific Calculator <br>
+        <br>
+        <br>
+        <br>
+        <div class="box">
+            <div *ngIf="bool">
+                &nbsp;{{stack}}
+            </div>
+            <div *ngIf="bool2">
+                {{ops[0]}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <button class="button" id="C" (click)="clear()">C</button>
+            <button class="button" id="+/-" (click)="invert()">+/-</button>
+            <button class="button" id="%" (click)="percent()">%</button>
+            <button class="button" id="/" (click)="divList()">/</button>
+        </div>
+        <div class="column">
+            <button class="button" id="7" (click)="add7()">7</button>
+            <button class="button" id="8" (click)="add8()">8</button>
+            <button class="button" id="9" (click)="add9()">9</button>
+            <button class="button" id="x" (click)="multList()">x</button>
+        </div>
+        <div class="column">
+            <button class="button" id="4" (click)="add4()">4</button>
+            <button class="button" id="5" (click)="add5()">5</button>
+            <button class="button" id="6" (click)="add6()">6</button>
+            <button class="button" id="-" (click)="subList()">-</button>
+        </div>
+        <div class="column">
+            <button class="button" id="1" (click)="add1()">1</button>
+            <button class="button" id="2" (click)="add2()">2</button>
+            <button class="button" id="3" (click)="add3()">3</button>
+            <button class="button" id="+" (click)="addList()">+</button>
+        </div>
+        <div class="column">
+            <button class="button" id="0" (click)="add0()">0</button>
+            <button class="button" id="." (click)="addDec()">.</button>
+            <button class="button" id="del" (click)="del()">del</button>
+            <button class="button" id="=" (click)="compute()">=</button>
+        </div>
+    </div>
