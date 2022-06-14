@@ -1,4 +1,4 @@
-import { IfStmt } from '@angular/compiler';
+import { IfStmt, ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -260,6 +260,9 @@ export class NonsciComponent implements OnInit {
     if (this.stack ==''){
       this.stack = '-';
     }
+    else if (this.stack == '-'){
+      this.stack = '';
+    }
     else{
       if(this.stack[0] == '-'){
         this.stack =  this.stack.substring(1);
@@ -301,13 +304,12 @@ export class NonsciComponent implements OnInit {
     }
     this.ops.push('+');
     }
-    else{
+    else if (this.bool1 == true){
       this.ops.pop();
       this.unlightAll();
       if(button != null){
       button.style.backgroundColor='blue';
       }
-      this.bool1 = true;
       this.ops.push('+');
     }
 }
