@@ -21,7 +21,7 @@ export class NonsciComponent implements OnInit {
   bool2 = false; //used to determien whether to show the answer to a calculation or not
   holder=0; //used for intermediate calculations
 
-
+  //adds 1 to the user input string
   public add1(){
     this.unlightButton();
     this.unlightButton1();
