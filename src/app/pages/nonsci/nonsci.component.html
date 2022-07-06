@@ -1,3 +1,5 @@
+<h1 class="heading2">Calculator</h1>
+<hr class="closeline2" />
 <div class="calculator">
     <div class="title">
         Non-Scientific Calculator
@@ -6,7 +8,7 @@
         <div class="box">
             <div *ngIf="bool">
                 &nbsp;{{stack}}
-            </div> 
+            </div>
             <div *ngIf="bool2">
                 &nbsp;{{ops[0]}}
             </div>
@@ -44,3 +46,5 @@
             <button class="button" id="=" (click)="compute()">=</button>
         </div>
     </div>
+</div>
+<p class="site-closing"></p>
