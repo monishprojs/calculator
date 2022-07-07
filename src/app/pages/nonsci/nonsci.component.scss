@@ -15,7 +15,7 @@
   margin-top: 5%;
   margin-bottom: 5%;
   margin-left: 30%;
-  background-color: lightblue;
+  background-color: rgb(0, 191, 255);;
   border-style: solid;
   border-width: 5px;
   border-radius: 25px;
@@ -26,14 +26,14 @@
 }
 
 .title {
-  color: red;
+  color: black;
   font-size: 150%;
   margin-top: 5%;
-  padding-left: 30%;
+  padding-left: 45%;
 }
 
 .results {
-  color: red;
+  color: black;
   font-size: 150%;
   padding-top: 15%;
   padding-left: 30%;
@@ -41,7 +41,7 @@
 
 .box {
   background-color: white;
-  color: red;
+  color: black;
   border-style: solid;
   border-width: 5px;
   border-color: black;
@@ -108,35 +108,23 @@
     margin-top: 2%;
     margin-left: 12%;
     margin-right: 500px;
-    background-color: lightblue;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 25px;
-    border-color: black;
     width: 70vw;
     height: 75vh;
   }
 
   .title {
-    color: red;
     font-size: 150%;
     margin-top: 5%;
-    padding-left: 30%;
+    padding-left: 35%;
   }
 
   .results {
-    color: red;
     font-size: 150%;
     padding-top: 5%;
     padding-left: 30%;
   }
 
   .box {
-    background-color: white;
-    color: red;
-    border-style: solid;
-    border-width: 5px;
-    border-color: black;
     width: 50vw;
     height: 10vh;
     margin-left: -23%;
@@ -167,11 +155,6 @@
 
 @media (min-width: 481px) and (max-width: 1280px) {
   .calculator {
-    background-color: lightblue;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 25px;
-    border-color: black;
     float: center;
     width: 60vw;
     height: 63vh;
@@ -181,26 +164,18 @@
   }
 
   .title {
-    color: red;
     font-size: 250%;
     margin-top: 5%;
-    padding-left: 25%;
+    padding-left: 35%;
   }
 
   .results {
-    color: red;
     font-size: 250%;
     padding-top: 5%;
     padding-left: 30%;
   }
 
   .box {
-    background-color: white;
-    color: red;
-    font-size: 200%;
-    border-style: solid;
-    border-width: 5px;
-    border-color: black;
     width: 40vw;
     height: 10vh;
     margin-left: -17%;
