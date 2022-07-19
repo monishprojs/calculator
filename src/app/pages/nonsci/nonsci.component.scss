@@ -1,42 +1,31 @@
-.heading2 {
-  color: rgb(0, 191, 255);
-  font-size: 250%;
-  border-color: black;
-  border-left: 0%;
-  padding-left: 5%;
-}
 
-.closeline2 {
-  border-color: black;
-  border-radius: 2%;
-}
 
 .calculator {
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 2%;
   margin-left: 30%;
-  background-color: rgb(0, 191, 255);;
+  background-color: silver;
   border-style: solid;
   border-width: 5px;
   border-radius: 25px;
   border-color: black;
-  float: center;
   width: 40vw;
   height: 75vh;
 }
 
 .title {
-  color: black;
-  font-size: 150%;
+  color: white;
+  font-size: 2rem;
   margin-top: 5%;
-  padding-left: 45%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .results {
-  color: black;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  color: purple;
   font-size: 150%;
-  padding-top: 15%;
-  padding-left: 30%;
 }
 
 .box {
@@ -47,23 +36,26 @@
   border-color: black;
   width: 21vw;
   height: 10vh;
-  margin-left: -5%;
   display: flex;
+  text-align: left;
+  overflow-x: hidden;
 }
 
 .button {
   width: 5vw;
   height: 5vh;
-  margin-left: 6px;
+  background-color: white;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
 .row {
   display: flex;
+  justify-content: space-between;
+  text-align: center;
   flex-wrap: wrap;
-  padding: 0px;
-  border-radius: 0px;
-  margin-left: 25%;
-  width: 80%;
+  margin-top: 3%;
+  width: 100%;
 }
 
 /* Create two equal columns that sits next to each other */
@@ -76,12 +68,8 @@
   margin-top: 0px;
 }
 
-.button {
-  background-color: white;
-}
-
 .button:hover {
-  opacity: 0.5;
+  background-color: silver;
 }
 
 .button1 {
@@ -92,121 +80,93 @@
   opacity: 0.5;
 }
 
+.backLinks {
+  background-image: url('/assets/metal.svg');
+  color: white;
+  margin-left: 5%;
+  margin-top: 1%;
+  height: 4rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
+
+.backLinks:hover {
+  background: none;
+  background-color: purple;
+}
+
 .site-closing {
-  background-color: rgb(0, 191, 255);
+   background-image: url('/assets/space.svg');
   font-size: 100%;
-  border-color: white;
-  color: black;
-  height: 150px;
-  margin-top: 50%;
-  width: 100%;
-  margin: 0;
+  height: 15rem;
+  margin-top: 5%;
+  margin-bottom: 0;
 }
 
 @media (max-width: 480px) {
   .calculator {
     margin-top: 2%;
     margin-left: 12%;
-    margin-right: 500px;
     width: 70vw;
-    height: 75vh;
+    height: 55vh;
   }
 
   .title {
     font-size: 150%;
     margin-top: 5%;
-    padding-left: 35%;
   }
 
   .results {
     font-size: 150%;
     padding-top: 5%;
-    padding-left: 30%;
   }
 
   .box {
     width: 50vw;
     height: 10vh;
-    margin-left: -23%;
-    display: flex;
   }
 
   .button {
     width: 10vw;
-    height: 5vh;
-    margin-right: 5px;
+    font-size: 1em;
   }
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0px;
-    border-radius: 0px;
-    margin-left: 12.5%;
-    width: 80%;
-  }
-
-  /* Create two equal columns that sits next to each other */
-  .column {
-    flex: 100%;
-    margin: 5px;
-  }
-}
 
 @media (min-width: 481px) and (max-width: 1280px) {
   .calculator {
     float: center;
     width: 60vw;
-    height: 63vh;
+    height: 70%;
     float: left;
-    margin-left: 20%;
-    margin-top: 5%;
+    margin-top: -10%;
   }
 
   .title {
     font-size: 250%;
     margin-top: 5%;
-    padding-left: 35%;
+    padding-left: 25%;
   }
 
   .results {
     font-size: 250%;
     padding-top: 5%;
-    padding-left: 30%;
   }
 
   .box {
+    font-size: 200%;
     width: 40vw;
     height: 10vh;
-    margin-left: -17%;
-    display: flex;
   }
 
   .button {
     width: 8vw;
-    height: 5vh;
-    margin-right: 5px;
-    font-size: 150%;
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0px;
-    border-radius: 0px;
-    margin-left: 20%;
-    width: 80%;
-  }
-
-  /* Create two equal columns that sits next to each other */
-  .column {
-    flex: 100%;
-    margin: 5px;
+    height: 6vh;
+    font-size: 100%;
   }
 
   .site-closing {
-  height: 200px;
-  margin-top: 100%;
+  margin-top: 65vh;
   margin-bottom:0;
+}
 }
 }

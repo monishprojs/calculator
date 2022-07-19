@@ -1,17 +1,9 @@
-<h1 class="heading2">Calculator</h1>
-<hr class="closeline2" />
 <div class="calculator">
-    <div class="title">
-        Calculator
-    </div>
+    <div class="title">Kumar Calculator</div>
     <div class="results">
         <div class="box">
-            <div *ngIf="bool">
-                &nbsp;{{stack}}
-            </div>
-            <div *ngIf="bool2">
-                &nbsp;{{ops[0]}}
-            </div>
+            <div *ngIf="bool">&nbsp;{{ stack }}</div>
+            <div *ngIf="bool2">&nbsp;{{ ops[0] }}</div>
         </div>
     </div>
     <div class="row">
@@ -47,4 +39,5 @@
         </div>
     </div>
 </div>
+<br />
 <p class="site-closing"></p>
