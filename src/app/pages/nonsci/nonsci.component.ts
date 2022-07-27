@@ -69,7 +69,7 @@ export class NonsciComponent implements OnInit {
 
   //unhighlights the mult button
   public unlightButton2() {
-    const button = document.getElementById('x');
+    const button = document.getElementById('*');
     if (button != null) {
       button.style.backgroundColor = 'white';
       this.bool1 = false;
@@ -123,10 +123,16 @@ export class NonsciComponent implements OnInit {
     }
   }
 
-  //plus operator
-  public addList() {
-    const button = document.getElementById('+');
-    if (button != null && this.bool1 == false) {
+  
+  /**
+   * 
+   * @param operation operation used for calculation
+   * stores the operation in an array, or changes the operation if desired
+   */
+  public operateList(operation: string) {
+    const button = document.getElementById(operation);
+    if (button!=null){
+    if (this.bool1 == false) {
       button.style.backgroundColor = 'blue';
       this.bool1 = true;
       if (this.stack != '') {
@@ -137,93 +143,16 @@ export class NonsciComponent implements OnInit {
       if (this.ops.length == 3) {
         this.compute1();
       }
-      this.ops.push('+');
-    } else if (this.bool1 == true) {
+      this.ops.push(operation);
+    } 
+    else {
       this.ops.pop();
       this.unlightAll();
-      if (button != null) {
-        button.style.backgroundColor = 'blue';
-      }
-      this.ops.push('+');
+      button.style.backgroundColor = 'blue';
+      this.bool1 = true;
+      this.ops.push(operation);
     }
   }
-
-  //minus operator
-  public subList() {
-    const button = document.getElementById('-');
-    if (button != null && this.bool1 == false) {
-      button.style.backgroundColor = 'blue';
-      this.bool1 = true;
-      if (this.stack != '') {
-        this.ops.push(this.stack);
-        this.stack = '';
-        this.bool2 = true;
-      }
-      if (this.ops.length == 3) {
-        this.compute1();
-      }
-      this.ops.push('-');
-    } else {
-      this.ops.pop();
-      this.unlightAll();
-      if (button != null) {
-        button.style.backgroundColor = 'blue';
-      }
-      this.bool1 = true;
-      this.ops.push('-');
-    }
-  }
-
-  //multiplication operator
-  public multList() {
-    const button = document.getElementById('x');
-    if (button != null && this.bool1 == false) {
-      button.style.backgroundColor = 'blue';
-      this.bool1 = true;
-      if (this.stack != '') {
-        this.ops.push(this.stack);
-        this.stack = '';
-        this.bool2 = true;
-      }
-      if (this.ops.length == 3) {
-        this.compute1();
-      }
-      this.ops.push('x');
-    } else {
-      this.ops.pop();
-      this.unlightAll();
-      if (button != null) {
-        button.style.backgroundColor = 'blue';
-      }
-      this.bool1 = true;
-      this.ops.push('x');
-    }
-  }
-
-  //division operator
-  public divList() {
-    const button = document.getElementById('/');
-    if (button != null && this.bool1 == false) {
-      button.style.backgroundColor = 'blue';
-      this.bool1 = true;
-      if (this.stack != '') {
-        this.ops.push(this.stack);
-        this.stack = '';
-        this.bool2 = true;
-      }
-      if (this.ops.length == 3) {
-        this.compute1();
-      }
-      this.ops.push('/');
-    } else {
-      this.ops.pop();
-      this.unlightAll();
-      if (button != null) {
-        button.style.backgroundColor = 'blue';
-      }
-      this.bool1 = true;
-      this.ops.push('/');
-    }
   }
 
   //computes the answer to a basic equation
@@ -238,23 +167,19 @@ export class NonsciComponent implements OnInit {
         this.holder = +this.ops[0] + +this.ops[2];
       } else if (this.ops[1] == '-') {
         this.holder = +this.ops[0] - +this.ops[2];
-      } else if (this.ops[1] == 'x') {
+      } else if (this.ops[1] == '*') {
         this.holder = +this.ops[0] * +this.ops[2];
       } else if (this.ops[1] == '/') {
         this.holder = +this.ops[0] / +this.ops[2];
       }
       this.ops = [];
       this.ops.push(this.holder as unknown as string);
-      this.holder = 0;
-    } else if (this.ops.length == 2) {
+    } 
+    else if (this.ops.length == 2) {
       this.holder = +this.ops[1];
-      this.unlightButton();
-      this.unlightButton1();
-      this.unlightButton2();
-      this.unlightButton3();
+      this.unlightAll();
       this.ops = [];
       this.ops.push(this.holder as unknown as string);
-      this.holder = 0;
     }
   }
 
@@ -267,14 +192,13 @@ export class NonsciComponent implements OnInit {
       this.holder = +this.ops[0] + +this.ops[2];
     } else if (this.ops[1] == '-') {
       this.holder = +this.ops[0] - +this.ops[2];
-    } else if (this.ops[1] == 'x') {
+    } else if (this.ops[1] == '*') {
       this.holder = +this.ops[0] * +this.ops[2];
     } else if (this.ops[1] == '/') {
       this.holder = +this.ops[0] / +this.ops[2];
     }
     this.ops = [];
     this.ops.push(this.holder as unknown as string);
-    this.holder = 0;
   }
 
 }
