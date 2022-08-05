@@ -2,17 +2,19 @@
 .calculator {
   margin-top: 2%;
   margin-left: 30%;
-  background-color: silver;
+  background-color: lightgrey;
   border-style: solid;
   border-width: 5px;
   border-radius: 25px;
   border-color: black;
   width: 40vw;
-  height: 75vh;
+  min-height: fit-content;
+  height: 60vh;
+  padding-bottom: 5rem;
 }
 
 .title {
-  color: white;
+  color: black;
   font-size: 2rem;
   margin-top: 5%;
   display: flex;
@@ -80,23 +82,8 @@
   opacity: 0.5;
 }
 
-.backLinks {
-  background-image: url('/assets/metal.svg');
-  color: white;
-  margin-left: 5%;
-  margin-top: 1%;
-  height: 4rem;
-  border-radius: 8px;
-  font-size: 1.5rem;
-}
-
-.backLinks:hover {
-  background: none;
-  background-color: purple;
-}
-
 .site-closing {
-   background-image: url('/assets/space.svg');
+  background-color: black;
   font-size: 100%;
   height: 15rem;
   margin-top: 5%;
@@ -136,9 +123,9 @@
   .calculator {
     float: center;
     width: 60vw;
-    height: 70%;
     float: left;
     margin-top: -10%;
+  padding-bottom: 0em;
   }
 
   .title {
